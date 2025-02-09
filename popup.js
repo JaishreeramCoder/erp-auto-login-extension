@@ -24,7 +24,7 @@ const answerInputs = [
 let uniqueQuestions = new Set();
 
 document.addEventListener("DOMContentLoaded", () => {
-    chrome.storage.sync.get("erpDetails", (data) => {
+    chrome.storage.local.get("erpDetails", (data) => {
       if (data.erpDetails) {
         const { rollno, password, securityQA } = data.erpDetails;
         rollnoInput.value = rollno;
