@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "ERP Auto Login",
+    "author": "Adarsh Sharma",
+    "version": "1.0",
+    "description": "Automatically autofill ERP login details for erp.iitkgp.ac.in.",
+    "permissions": [
+      "storage"
+    ],
+    "host_permissions": [
+      "https://erp.iitkgp.ac.in/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://erp.iitkgp.ac.in/*"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      }
+    }
+}
